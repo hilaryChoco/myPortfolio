@@ -1018,6 +1018,7 @@
         <p style="margin-top: 0.5rem; color: #64748b;">Développé avec ❤️ et beaucoup de café ☕</p>
     </footer>
 
+
     <script>
         // Année automatique
         document.getElementById('year').textContent = new Date().getFullYear();
@@ -1078,30 +1079,6 @@
         document.querySelectorAll('.skill-card, .project-card, .timeline-item').forEach(el => {
             observer.observe(el);
         });
-
-        // Mode édition
-        function toggleEdit() {
-            const editables = document.querySelectorAll('.editable');
-            const isEditable = editables[0].contentEditable === 'true';
-            
-            editables.forEach(el => {
-                el.contentEditable = !isEditable;
-                if (!isEditable) {
-                    el.style.outline = '2px dashed var(--primary)';
-                } else {
-                    el.style.outline = 'none';
-                }
-            });
-
-            const btn = document.querySelector('.edit-mode');
-            if (!isEditable) {
-                btn.textContent = '💾 Sauvegarder';
-                btn.style.background = 'var(--accent)';
-            } else {
-                btn.textContent = '✏️ Mode édition';
-                btn.style.background = 'var(--primary)';
-            }
-        }
 
         // Animation navbar au scroll
         let lastScroll = 0;
